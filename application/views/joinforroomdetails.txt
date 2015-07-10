@@ -1,0 +1,9 @@
+create view displayroom 
+as select room.room_no, room.number_of_room as number_of_room,
+room_type.room_type_title as room_type_title, 
+room_type.image as image, 
+capacity.capacity_title as capacity_title, 
+capacity.quantity as quantity  
+from room_type 
+join room on room.room_type_id=room_type.room_type_id 
+join capacity on room.capacity_id=capacity.capacity_id;
